@@ -27,11 +27,7 @@ alias cd='z'
 alias zshrc='nvim ~/.config/zsh/.zshrc'
 alias d='docker'
 alias dex='docker exec -it'
-if [[ $(uname -s) == "Linux" ]]; then
-  alias dc='docker-compose'
-else
-  alias dc='docker compose'
-fi
+alias dc='docker-compose'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
