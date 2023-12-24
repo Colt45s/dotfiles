@@ -5,17 +5,17 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aqua/aqua.yaml
 
 # pnpm
-export PNPM_HOME="~/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Go
-export PATH="$(go env GOPATH)/bin:$PATH"
-
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Go
+export PATH="$(go env GOPATH)/bin:$PATH"
 
 export EDITOR="nvim"
 
