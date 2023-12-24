@@ -63,6 +63,9 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end,
   },
+  {
+    "nvim-pack/nvim-spectre",
+  },
 }
 
 return plugins

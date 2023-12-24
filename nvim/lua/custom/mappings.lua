@@ -22,4 +22,10 @@ M.trouble = {
   },
 }
 
+M.spectre = {
+  n = {
+    ["<leader>ss"] = { "<cmd> lua require('spectre').toggle() <cr>", "Toggle Spectre" },
+  },
+}
+
 return M
