@@ -9,14 +9,12 @@ local servers = {
   "cssls",
   "tsserver",
   "gopls",
-  -- "rust-analyzer",
   "yamlls",
   "bashls",
   "jsonls",
   "dockerls",
   "terraformls",
   "emmet_ls",
-  "eslint",
 }
 
 for _, lsp in ipairs(servers) do
@@ -25,3 +23,23 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern "package.json",
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern "Cargo.toml",
+  settings = {
+    ["rust-analyzer"] = {
+      catgo = {
+        allFeatures = true,
+      },
+    },
+  },
+}

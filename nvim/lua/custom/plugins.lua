@@ -44,7 +44,7 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    cmd = "Trouble",
+    cmd = { "TroubleToggle", "Trouble" },
     config = function()
       require("trouble").setup()
     end,
@@ -54,6 +54,13 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
     end,
   },
 }

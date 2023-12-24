@@ -14,7 +14,7 @@ M.treesitter = {
     "prisma",
     "go",
     "gomod",
-    -- "rust",
+    "rust",
     "graphql",
     "http",
     "bash",
@@ -59,7 +59,7 @@ M.mason = {
     "eslint-lsp",
 
     -- rust
-    -- "rust-analyzer",
+    "rust-analyzer",
 
     -- terraform
     "terraform-ls",
