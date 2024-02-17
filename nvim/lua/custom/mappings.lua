@@ -1,5 +1,13 @@
 local M = {}
 
+M.general = {
+  t = {
+    ["<Esc>"] = { "<C-\\><C-n>", "Exit terminal mode", {
+      noremap = true,
+    } },
+  },
+}
+
 M.copilot = {
   i = {
     ["<C-l>"] = {

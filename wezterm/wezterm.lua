@@ -8,7 +8,7 @@ local config = {
 		{ family = "Cica" },
 		{ family = "Cica", assume_emoji_presentation = true },
 	}),
-	font_size = 16.0,
+	font_size = 18.0,
 	color_scheme = "Tokyo Night Moon",
 	use_ime = true,
 	status_update_interval = 1000,
