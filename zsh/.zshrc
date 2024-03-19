@@ -40,6 +40,8 @@ alias zi='zip -r'
 alias uzi='unzip'
 alias mkdir='mkdir -p'
 alias rm='rm -rf'
+alias python='python3'
+alias lg='lazygit'
 
 # history
 HISTFILE=~/.config/zsh/.zsh_history
