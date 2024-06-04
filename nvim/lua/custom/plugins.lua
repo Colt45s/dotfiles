@@ -1,6 +1,17 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   config = function()
+  --     require("hardtime").setup()
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   event = "VeryLazy",
+  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -65,6 +76,38 @@ local plugins = {
   },
   {
     "nvim-pack/nvim-spectre",
+  },
+  {
+    "echasnovski/mini.surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("mini.surround").setup()
+    end,
+  },
+  {
+    "echasnovski/mini.cursorword",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("mini.cursorword").setup()
+    end,
+  },
+  {
+    "echasnovski/mini.move",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("mini.move").setup()
+    end,
+  },
+  {
+    "echasnovski/mini.indentscope",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("mini.indentscope").setup()
+    end,
   },
 }
 
