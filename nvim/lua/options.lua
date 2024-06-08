@@ -1,3 +1,4 @@
+require "nvchad.options"
 vim.opt.relativenumber = true
 vim.api.nvim_create_autocmd("BufEnter", {
   group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
