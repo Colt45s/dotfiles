@@ -1,6 +1,7 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local configs = require "nvchad.configs.lspconfig"
+local on_attach = configs.on_attach
+local on_init = configs.on_init
+local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
 
@@ -30,34 +31,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  settings = {
-    rust_analyzer = {
-      imports = {
-        granularity = {
-          group = "module",
-        },
-        prefix = "self",
-      },
-      cargo = {
-        allFeatures = true,
-        buildScripts = {
-          enable = true,
-        },
-      },
-      procMacro = {
-        enable = true,
-      },
-      checkOnSave = {
-        command = "cargo clippy",
-      },
-      cachePriming = {
-        enable = true,
-      },
-    },
-  },
-}
