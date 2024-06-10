@@ -8,7 +8,6 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "tsserver",
   "gopls",
   "yamlls",
   "bashls",
@@ -21,7 +20,6 @@ local servers = {
   "eslint",
   "lua_ls",
   "graphql",
-  "denols",
 }
 
 for _, lsp in ipairs(servers) do
@@ -31,3 +29,20 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  commands = {
+    OrganizeImports = {
+      function()
+        local params = {
+          command = "_typescript.organizeImports",
+          arguments = { vim.api.nvim_buf_get_name(0) },
+        }
+        vim.lsp.buf.execute_command(params)
+      end,
+    },
+  },
+}

@@ -41,7 +41,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = require "configs.treesitter",
     dependencies = {
-      "windwp/nvim-ts-autotag",
+      {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup()
+        end,
+      },
     },
   },
   {
@@ -73,13 +78,6 @@ return {
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
       require("trouble").setup()
-    end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup()
     end,
   },
   {
