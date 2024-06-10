@@ -29,3 +29,15 @@ map(
   { desc = "Search on current file" }
 )
 map("v", "<leader>sw", "<cmd> lua require('spectre').open_visual() <cr>", { desc = "Search current word" })
+
+map("n", "<leader>*", "*''cgn")
+
+-- saga
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+-- map("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")
+-- map("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+-- map("n", "ga", "<cmd>Lspsaga code_action<CR>")
+-- map("n", "gn", "<cmd>Lspsaga rename<CR>")
+-- map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>")
+-- map("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+-- map("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")

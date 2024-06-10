@@ -45,6 +45,16 @@ return {
     },
   },
   {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require "configs.lspsaga"
+    end,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     opts = require "configs.nvimtree",
   },
