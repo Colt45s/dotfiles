@@ -63,6 +63,21 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = require "configs.nvimtree",
   },
+  {
+    "phaazon/hop.nvim",
+    lazy = false,
+    branch = "v2",
+    config = function()
+      require("hop").setup()
+    end,
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazy = false,
+    config = function()
+      require("diffview").setup()
+    end,
+  },
   -- copilot
   {
     "github/copilot.vim",

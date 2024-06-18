@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-  theme = "palenight",
+  theme = "falcon",
 }
 
 return M

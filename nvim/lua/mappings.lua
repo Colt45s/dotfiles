@@ -44,6 +44,14 @@ map("n", "<Leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", { desc = "
 map("n", "<Leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { desc = "Show Cursor Diagnostics" })
 map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Diagnostic Jump Previous" })
 map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Diagnostic Jump Next" })
+-- hop
+map("n", "<leader>q", "<cmd>HopWord<CR>")
+
+-- diffview
+map("n", "<leader>go", "<cmd>DiffviewOpen<CR>")
+map("n", "<leader>gx", "<cmd>DiffviewClose<CR>")
+map("n", "<leader>gr", "<cmd>DiffviewRefresh<CR>")
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory<CR>")
 
 -- cgn -> n -> .
 map("n", "<leader>*", "*''cgn")
