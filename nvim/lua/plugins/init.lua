@@ -89,13 +89,6 @@ return {
     end,
   },
   {
-    "folke/trouble.nvim",
-    cmd = { "TroubleToggle", "Trouble" },
-    config = function()
-      require("trouble").setup()
-    end,
-  },
-  {
     "nvim-pack/nvim-spectre",
   },
   {
