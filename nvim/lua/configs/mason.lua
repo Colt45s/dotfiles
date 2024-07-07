@@ -32,5 +32,6 @@ return {
     "taplo",
     "goimports",
     "shellcheck",
+    "marksman",
   },
 }

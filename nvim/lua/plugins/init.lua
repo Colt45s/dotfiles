@@ -11,6 +11,14 @@ return {
   --   event = "VeryLazy",
   -- },
   {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  {
     "stevearc/conform.nvim",
     event = "BufWrite",
     config = function()
@@ -25,12 +33,32 @@ return {
     end,
   },
   {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+  {
     "mrcjkb/rustaceanvim",
     version = "^4",
     ft = { "rust" },
     dependencies = "neovim/nvim-lspconfig",
     config = function()
       require "configs.rustaceanvim"
+    end,
+  },
+  {
+    "saecki/crates.nvim",
+    ft = { "toml" },
+    config = function(_, opts)
+      local crates = require "crates"
+      crates.setup(opts)
+      require("cmp").setup.buffer {
+        sources = { { name = "crates" } },
+      }
+      crates.show()
+      require("core.utils").load_mappings "crates"
     end,
   },
   {
@@ -47,16 +75,6 @@ return {
           require("nvim-ts-autotag").setup()
         end,
       },
-    },
-  },
-  {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      require "configs.lspsaga"
-    end,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
     },
   },
   {

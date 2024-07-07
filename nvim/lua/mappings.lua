@@ -23,21 +23,6 @@ map(
 )
 map("v", "<leader>sw", "<cmd> lua require('spectre').open_visual() <cr>", { desc = "Search current word" })
 
--- saga
-map("n", "K", "<cmd>Lspsaga hover_doc<CR>")
-map("n", "<leader>lf", "<cmd>Lspsaga finder<CR>", { desc = "LSP Saga Finder" })
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" })
-map("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", { desc = "Rename All Occurrences" })
-map("n", "<leader>lp", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek Definition" })
-map("n", "<leader>ld", "<cmd>Lspsaga goto_definition<CR>", { desc = "Go to Definition" })
-map("n", "<leader>lt", "<cmd>Lspsaga peek_type_definition<CR>", { desc = "Peek Type Definition" })
-map("n", "<leader>ll", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Show Line Diagnostics" })
-map("n", "<leader>lb", "<cmd>Lspsaga show_buf_diagnostics ++normal<CR>", { desc = "Show Buffer Diagnostics" })
-map("n", "<leader>lw", "<cmd>Lspsaga show_workspace_diagnostics ++normal<CR>", { desc = "Show Workspace Diagnostics" })
-map("n", "<leader>lc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { desc = "Show Cursor Diagnostics" })
-map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Diagnostic Jump Previous" })
-map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Diagnostic Jump Next" })
-
 -- hop
 map("n", "<leader>q", "<cmd>HopWord<CR>")
 
@@ -49,3 +34,7 @@ map("n", "<leader>ddh", "<cmd>DiffviewFileHistory<CR>")
 
 -- cgn -> n -> .
 map("n", "<leader>*", "*''cgn")
+
+map("n", "<leader>rcu", function()
+  require("crates").update_all_crates()
+end, { desc = "Update all crates" })
