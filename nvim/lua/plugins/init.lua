@@ -11,6 +11,11 @@ return {
   --   event = "VeryLazy",
   -- },
   {
+    "folke/trouble.nvim",
+    opts = {},
+    cmd = "Trouble",
+  },
+  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
@@ -31,6 +36,9 @@ return {
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
+    dependencies = {
+      { "j-hui/fidget.nvim", opts = {} },
+    },
   },
   {
     "rust-lang/rust.vim",
