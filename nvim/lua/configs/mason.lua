@@ -23,6 +23,8 @@ return {
     -- lua
     "lua-language-server",
     "graphql-language-service-cli",
+    -- deno
+    "deno",
 
     -- conform
     "stylua",

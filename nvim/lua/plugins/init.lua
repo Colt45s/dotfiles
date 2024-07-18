@@ -31,13 +31,18 @@ return {
     end,
   },
   {
+    "j-hui/fidget.nvim",
+    event = { "VeryLazy" },
+    opts = {},
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
     dependencies = {
-      { "j-hui/fidget.nvim", opts = {} },
+      "kyoh86/climbdir.nvim",
     },
   },
   {
